@@ -1,14 +1,21 @@
-const student = {
-  name: "John",
-  age: 30,
+type Todo = {
+  title: string;
+  description: string;
+  completed: boolean;
 };
 
-function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key];
+function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>): Todo {
+  return { ...todo, ...fieldsToUpdate };
 }
 
-let studentName = getProperty(student, "name");
-console.log(studentName);
+const todo1 = {
+  title: "organize desk",
+  description: "clear clutter",
+  completed: false,
+};
 
-let studentAge = getProperty(student, "email");
-console.log(studentAge);
+const todo2 = updateTodo(todo1, {
+  description: "throw out trash",
+});
+
+console.log(todo2);
