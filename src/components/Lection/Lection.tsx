@@ -1,21 +1,11 @@
-type Todo = {
-  title: string;
-  description: string;
-  completed: boolean;
+type User = {
+  name: string;
+  age: number;
 };
 
-function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>): Todo {
-  return { ...todo, ...fieldsToUpdate };
-}
-
-const todo1 = {
-  title: "organize desk",
-  description: "clear clutter",
-  completed: false,
+const john: Readonly<User> = {
+  name: "John",
+  age: 30,
 };
 
-const todo2 = updateTodo(todo1, {
-  description: "throw out trash",
-});
-
-console.log(todo2);
+const numbers: ReadonlyArray<number> = [1, 2, 3, 4, 5];
