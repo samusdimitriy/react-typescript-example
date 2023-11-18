@@ -1,11 +1,7 @@
-type User = {
+type Person = {
   name: string;
   age: number;
+  address: string;
 };
 
-const john: Readonly<User> = {
-  name: "John",
-  age: 30,
-};
-
-const numbers: ReadonlyArray<number> = [1, 2, 3, 4, 5];
+type PersonSummary = Pick<Person, "name" | "age">;
