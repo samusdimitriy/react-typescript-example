@@ -1,8 +1,5 @@
-function reverse<K>(items: K[]): K[] {
-  return items.reverse();
+function lengthOfObject<T extends { length: number }>(obj: T): number {
+  return obj.length;
 }
 
-let numbers = reverse([1, 2, 3]);
-console.log(numbers);
-let strings = reverse(["a", "b", "c"]);
-console.log(strings);
+lengthOfObject({ name: 10, length: 2 });
