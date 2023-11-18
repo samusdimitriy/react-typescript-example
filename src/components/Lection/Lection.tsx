@@ -1,14 +1,8 @@
-type MixedType = {
-  [key: string]: string | number;
-};
+function reverse<K>(items: K[]): K[] {
+  return items.reverse();
+}
 
-const userInfo: MixedType = {
-  name: "John Doe",
-  age: 25,
-  country: "USA",
-};
-
-const bookDetails: MixedType = {
-  title: "Harry Potter",
-  pageCount: 300,
-};
+let numbers = reverse([1, 2, 3]);
+console.log(numbers);
+let strings = reverse(["a", "b", "c"]);
+console.log(strings);
