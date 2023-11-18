@@ -4,4 +4,9 @@ type Person = {
   address: string;
 };
 
-type PersonSummary = Pick<Person, "name" | "age">;
+type PersonWithoutAddress = Omit<Person, "address">;
+
+const personWithoutAddress: PersonWithoutAddress = {
+  name: "John",
+  age: 25,
+};
