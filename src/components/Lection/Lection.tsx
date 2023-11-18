@@ -1,12 +1,9 @@
-type Person = {
-  name: string;
-  age: number;
-  address: string;
+type CityDatabase = Record<string, number>;
+
+const database: CityDatabase = {
+  "New York": 1,
+  "Los Angeles": 2,
+  Chicago: 3,
 };
 
-type PersonWithoutAddress = Omit<Person, "address">;
-
-const personWithoutAddress: PersonWithoutAddress = {
-  name: "John",
-  age: 25,
-};
+database["New York"] = 10;
